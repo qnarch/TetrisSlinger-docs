@@ -6,6 +6,8 @@
 Welcome to TetrisSlinger's documentation!
 =========================================
 
+This site will contain the documentation for the multiplayer tetris server.
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
