@@ -1,7 +1,7 @@
 Specification for Server to Client Communication
 ================================================
 
-version 2017/11/10
+*version 2017/11/10*
 
 NOTE: This document is subjected to change, modifications can and will happen
 until a final release is available.
