@@ -68,6 +68,7 @@ Response: ::
 get_active_block
 """"""""""""""""
 Send: ::
+
    ...
    'value': <boolean>}
 
