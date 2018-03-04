@@ -12,7 +12,7 @@ Tetrislib
    
    .. py:method:: applyAction(board)
 
-      Do stuff, then, set action_completed to True.
+      Do stuff; then, set :py:attr:`action_completed` to True.
 
 .. py:class:: Movement(direction, [repeat=1])
 
