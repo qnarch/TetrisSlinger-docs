@@ -99,7 +99,7 @@ Send: ::
    ...
    'value': <string> }
 
-where the string is either `left`, `right`, `rotate` or `hard_drop`.
+where the string is either `left`, `right`, `rotate`, `drop` or `hard_drop`.
 
 Response: ::
 
