@@ -186,4 +186,12 @@ Tetrislib
 
       :param board: The board.
       :param n: How many null rows one should add.
-		
+
+
+   .. py:method:: mergeActiveWithBoard
+
+      Merges the active block with the board.
+
+      :return: The resulting board.
+      :rtype: list(list(int))
+
