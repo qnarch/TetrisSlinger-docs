@@ -126,14 +126,14 @@ Response: ::
 
 where `<string>` can be one of these: ::
 
-   AddRow-pow
-   Earthquake-pow
-   Milkshake-pow
-   Specialgone-pow
-   Shotgun-pow
-   Gravity-pow
-   Clear-pow
-   Switch-pow
+   AddRow
+   Earthquake
+   Milkshake
+   Specialgone
+   Shotgun
+   Gravity
+   Clear
+   Switch
    
 use_queued_powerup
 """"""""""""""""""
