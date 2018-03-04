@@ -152,3 +152,12 @@ Tetrislib
       Applies an :py:class:`Action` to the board; that is, the method
       :py:meth:`Action.applyAction` is called with the
       :py:class:`Board` as its argument.
+
+   .. py:method:: collisionCheck(direction)
+
+      Does a collision check for a given direction.
+
+      :param str direction: A direction. Valid values are 'left',
+                            'down' and right.
+      :return: Returns True if there is a collision, otherwise False.
+      :rtype: Bool
