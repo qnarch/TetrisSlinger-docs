@@ -12,7 +12,9 @@ This site will contain the documentation for the multiplayer tetris server.
    :maxdepth: 2
    :caption: Contents:
    
+   tetrislib
    com
+
 
 
 
