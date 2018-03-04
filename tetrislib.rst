@@ -202,4 +202,11 @@ Tetrislib
       :param board: The board.
       :type board: list(list(int))
 
+   .. py:method:: removeRows(row)
+
+      Takes an array of integers and remove it from the board.
+
+      :param row: Array of integers to remove.
+      :type row: list(int)
+
 		  
