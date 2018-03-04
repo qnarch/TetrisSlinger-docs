@@ -129,7 +129,7 @@ where `<string>` can be one of these: ::
    AddRow
    Earthquake
    Milkshake
-   Specialgone
+   RemovePow
    Shotgun
    Gravity
    ClearBoard
