@@ -195,3 +195,11 @@ Tetrislib
       :return: The resulting board.
       :rtype: list(list(int))
 
+   .. py:method:: printBoard(board)
+
+      Prints the board to the terminal.
+
+      :param board: The board.
+      :type board: list(list(int))
+
+		  
