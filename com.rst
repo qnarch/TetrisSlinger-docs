@@ -1,7 +1,7 @@
 Specification for Server to Client Communication
 ================================================
 
-*version 2017/11/10*
+*version 2018/03/04*
 
 NOTE: This document is subjected to change, modifications can and will happen
 until a final release is available.
@@ -20,7 +20,7 @@ Client to Server
 The client is sending to the server a UTF-8 string with the following
 format: ::
 
-   { 'version': '0.1', 'type': <string>, 'value': ...  }
+   { 'version': '0.2', 'type': <string>, 'value': ...  }
 
 
 Where `version` is the protocol version number, `type` the type of
@@ -34,6 +34,9 @@ The following commands should be available (not in a particular order): ::
    get_active_block
    move_active_block
 
+   get_queued_powerup
+   use_queued_powerup
+
    set_name
 
    start_game
@@ -42,7 +45,7 @@ The following commands should be available (not in a particular order): ::
 
 The server will answer in this format: ::
 
-   { 'version': '0.1',
+   { 'version': '0.2',
      'response_type': <string>,
      'value': ...
    }
@@ -59,7 +62,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.1',
+   { 'version': '0.2',
      'response_type': 'board',
      'value': <int_array>
    }
@@ -74,7 +77,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.1',
+   { 'version': '0.2',
      'response_type': 'active_block',
      'value': <string>
    }
@@ -96,16 +99,55 @@ Send: ::
    ...
    'value': <string> }
 
-where the string is either `left`, `right`, `rotate` or `hard_drop`.
+where the string is either `left`, `right`, `rotate`, `drop` or `hard_drop`.
 
 Response: ::
 
-   { 'version': '0.1',
+   { 'version': '0.2',
      'response_type': 'status',
      'value': <int>
    }
 
 1 for ok, or 0 for error.
+
+get_queued_powerup
+""""""""""""""""""
+Send: ::
+
+   ...
+   'value': <boolean>}
+
+Response: ::
+
+   { 'version': '0.2',
+     'response_type': 'queued_powerup',
+     'value': <string>
+   }
+
+where `<string>` can be one of these: ::
+
+   AddRow-pow
+   Earthquake-pow
+   Milkshake-pow
+   Specialgone-pow
+   Shotgun-pow
+   Gravity-pow
+   Clear-pow
+   Switch-pow
+   
+use_queued_powerup
+""""""""""""""""""
+Send: ::
+
+   ...
+   'value': <boolean>}
+
+Response: ::
+
+   { 'version': '0.2',
+     'response_type': 'board',
+     'value': <int_array>
+   }
 
 set_name
 """"""""
@@ -116,7 +158,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.1',
+   { 'version': '0.2',
      'response_type': 'status',
      'value': <int>
    }
@@ -133,7 +175,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.1',
+   { 'version': '0.2',
      'response_type': 'status',
      'value': <int>
    }
@@ -150,7 +192,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.1',
+   { 'version': '0.2',
     'response_type': 'status',
     'value': <int>
    }
