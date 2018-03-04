@@ -209,4 +209,10 @@ Tetrislib
       :param row: Array of integers to remove.
       :type row: list(int)
 
+   .. py:method:: update
+
+      This method's purpose is to determine whether the active block
+      should merge to the static one. Runs for each tick.
+
+      
 		  
