@@ -47,7 +47,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'TetrisSlinger'
-copyright = '2017, Olof Sjödin et.al.'
+copyright = '2018, Studio Qnarch'
 author = 'Olof Sjödin et.al.'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -89,7 +89,13 @@ html_theme = 'alabaster'
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+    'logo_name' : True,
+    'description' : 'Documentation for the multiplayer tetris' ,
+    'fixed_sidebar' : True,
+    'sidebar_width' : '250px'
+
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -103,6 +109,8 @@ html_static_path = ['_static']
 # refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
 html_sidebars = {
     '**': [
+        'about.html',
+        'navigation.html',
         'relations.html',  # needs 'show_related': True theme option to display
         'searchbox.html',
     ]
