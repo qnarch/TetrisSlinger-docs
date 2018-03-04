@@ -179,4 +179,11 @@ Tetrislib
       Makes the active block go directly to the bottom of the board.
 
 
+   .. py:method:: fillNullRowsFromTop(board, n)
+
+      Adding null blocks from the top of the board and sets the result
+      to :py:attr:`board`.
+
+      :param board: The board.
+      :param n: How many null rows one should add.
 		
