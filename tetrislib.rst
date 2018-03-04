@@ -174,3 +174,9 @@ Tetrislib
       :rtype: Bool
 
    
+   .. py:method:: doHardDrop
+
+      Makes the active block go directly to the bottom of the board.
+
+
+		
