@@ -34,6 +34,9 @@ The following commands should be available (not in a particular order): ::
    get_active_block
    move_active_block
 
+   get_queued_powerup
+   use_queued_powerup
+
    set_name
 
    start_game
@@ -106,6 +109,45 @@ Response: ::
    }
 
 1 for ok, or 0 for error.
+
+get_queued_powerup
+""""""""""""""""""
+Send: ::
+
+   ...
+   'value': <boolean>}
+
+Response: ::
+
+   { 'version': '0.1',
+     'response_type': 'queued_powerup',
+     'value': <string>
+   }
+
+where `<string>` can be one of these: ::
+
+   AddRow-pow
+   Earthquake-pow
+   Milkshake-pow
+   Specialgone-pow
+   Shotgun-pow
+   Gravity-pow
+   Clear-pow
+   Switch-pow
+   
+use_queued_powerup
+""""""""""""""""""
+Send: ::
+
+   ...
+   'value': <boolean>}
+
+Response: ::
+
+   { 'version': '0.1',
+     'response_type': 'board',
+     'value': <int_array>
+   }
 
 set_name
 """"""""
