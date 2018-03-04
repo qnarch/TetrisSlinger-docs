@@ -158,6 +158,19 @@ Tetrislib
       Does a collision check for a given direction.
 
       :param str direction: A direction. Valid values are 'left',
-                            'down' and right.
+                            'down' and 'right'.
       :return: Returns True if there is a collision, otherwise False.
       :rtype: Bool
+
+   .. py:method:: collisionCheckWithShapeAndPos(position, block):
+
+      Apply a given block onto the board with a given coordinate,
+      then, check whether there is a collision or not.
+
+      :param position: The position of the block in (x, y)
+      :type position: tuple(int, int)
+      :param Block block: The block
+      :return: ``True`` if there is a collision, ``False`` otherwise.
+      :rtype: Bool
+
+   
