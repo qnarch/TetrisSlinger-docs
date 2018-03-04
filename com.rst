@@ -132,8 +132,8 @@ where `<string>` can be one of these: ::
    Specialgone
    Shotgun
    Gravity
-   Clear
-   Switch
+   ClearBoard
+   SwitchBoard
    
 use_queued_powerup
 """"""""""""""""""
