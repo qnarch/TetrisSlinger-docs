@@ -1,7 +1,7 @@
 Specification for Server to Client Communication
 ================================================
 
-*version 2017/11/10*
+*version 2018/03/04*
 
 NOTE: This document is subjected to change, modifications can and will happen
 until a final release is available.
@@ -20,7 +20,7 @@ Client to Server
 The client is sending to the server a UTF-8 string with the following
 format: ::
 
-   { 'version': '0.1', 'type': <string>, 'value': ...  }
+   { 'version': '0.2', 'type': <string>, 'value': ...  }
 
 
 Where `version` is the protocol version number, `type` the type of
@@ -45,7 +45,7 @@ The following commands should be available (not in a particular order): ::
 
 The server will answer in this format: ::
 
-   { 'version': '0.1',
+   { 'version': '0.2',
      'response_type': <string>,
      'value': ...
    }
@@ -62,7 +62,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.1',
+   { 'version': '0.2',
      'response_type': 'board',
      'value': <int_array>
    }
@@ -77,7 +77,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.1',
+   { 'version': '0.2',
      'response_type': 'active_block',
      'value': <string>
    }
@@ -103,7 +103,7 @@ where the string is either `left`, `right`, `rotate` or `hard_drop`.
 
 Response: ::
 
-   { 'version': '0.1',
+   { 'version': '0.2',
      'response_type': 'status',
      'value': <int>
    }
@@ -119,7 +119,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.1',
+   { 'version': '0.2',
      'response_type': 'queued_powerup',
      'value': <string>
    }
@@ -144,7 +144,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.1',
+   { 'version': '0.2',
      'response_type': 'board',
      'value': <int_array>
    }
@@ -158,7 +158,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.1',
+   { 'version': '0.2',
      'response_type': 'status',
      'value': <int>
    }
@@ -175,7 +175,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.1',
+   { 'version': '0.2',
      'response_type': 'status',
      'value': <int>
    }
@@ -192,7 +192,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.1',
+   { 'version': '0.2',
     'response_type': 'status',
     'value': <int>
    }
