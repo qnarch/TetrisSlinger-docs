@@ -26,8 +26,11 @@ Actions
    operates on a board; that is, they guarantee that they have the
    method :py:meth:`applyAction`.
 
-   :param bool action_completed: Indicates whether the action has been
-                                 completed or not.
+   .. py:attribute:: action_completed
+		     
+      :type: bool
+      :description: Indicates whether :py:meth:`applyAction` has
+                    runned or not.
    
    .. py:method:: applyAction(board)
 
