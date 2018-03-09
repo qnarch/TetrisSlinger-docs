@@ -1,14 +1,50 @@
 Tetrislib
 =========
 
+Introduction
+------------
+
+What is this library?
+^^^^^^^^^^^^^^^^^^^^^
+
+**Tetrislib** is a python 3 library which one can use to play the
+ classical game `Tetris`_. This library consists of a
+ :py:class:`Board` and its :py:class:`Action`:s; the Action's purpose
+ is to manipulate the Board. The user are able to implement their own
+ Action's using inheritance.
+
+The purpose of this document
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+ The purpose of this document is to provide the user information on
+ how one can use this library for the user's implementation of
+ Tetris. Furthermore, the user will be introduced to how tetrislib
+ enables control of the board movement as well as how one can use the
+ matrix representation of the board. Also, an section will be provided
+ with a complete description of all classes and its methods including
+ their purpose.
+
+ .. _Tetris: https://en.wikipedia.org/wiki/Tetris
+
+Usage
+-----
+ 
+Classes
+-------
+
+Actions
+^^^^^^^
 .. py:class:: Action
 
    Every class which are a subset to this class is an action which
    operates on a board; that is, they guarantee that they have the
    method :py:meth:`applyAction`.
 
-   :param bool action_completed: Indicates whether the action has been
-                                 completed or not.
+   .. py:attribute:: action_completed
+		     
+      :type: bool
+      :description: Indicates whether :py:meth:`applyAction` has run
+                    or not.
    
    .. py:method:: applyAction(board)
 
@@ -26,23 +62,37 @@ Tetrislib
 
    .. py:method:: applyAction(board)
 
-      Applying the movement with the direction as defined at :py:attr:`direction`.
+      Applying the movement with the direction as defined at
+      :py:attr:`direction`.
 
 .. py:class:: SetBlock(block)
 
    An :py:class:`Action` class which sets the active block on a board
+   to a :py:class:`Block`.
+
+   :param Block block: The block which the :py:class:`Board` should
+                       use as an active block.
 
 .. py:class:: Block(rotation)
 
-   A class which describes a block an its rotation. Internally,
-   :py:attr:`rotations` contains a list of all
-   rotations. :py:attr:`rotation_index` 
-
-   :param int rotation_index: This contains the index which the
-			      methods in this class use to determine
-			      its rotation state.
-   :param rotations: A list of the all possible rotations of the blocks.
+   A class which describes a block an its rotation.
 		     
+   .. rubric:: Attributes
+
+   .. py:attribute:: rotations
+
+      :type: list(list(list(int)))
+      :description: Contains a list of matrices where each matrix
+                    represents a rotation of this block.
+
+   .. py:attribute:: rotation_index
+		     
+      :type: int
+      :description: Contains the index to :py:attr:`rotations` which
+                    e.g. :py:meth:`rotate` use to determine current
+                    state.
+
+   .. rubric:: Methods
    .. py:method:: rotate
 
       Rotate the block counterclockwise; that is, increment
@@ -70,26 +120,47 @@ Tetrislib
       :return: The block as a nested int array.
       :rtype: list(list(int))
 
+
+Board
+^^^^^
+
 .. py:class:: Board
 
    This class contains the tetris board.
 
-   :param active_block: The current active block
-   :type active_block: Block
+   .. rubric:: Attributes
+   
+   .. py:attribute:: active_block
 
-   :param active_block_position: The position of the active block.
-   :type active_block_position: tuple(int, int)
-		       
-   :param blocks: All the possible blocks for a board.
-   :type blocks: dict(str, Block)
-		 
-   :param board: The board, where the value of a block at (x,y) is
-                 defined as board[y][x].
-   :type board: int
+      :type: :py:class:`Block`
+      :description: The current active block. Use
+		    :py:meth:`setActiveBlock` to change
+		    it. Do **not** change this directly.
 
+   .. py:attribute:: active_block_position
+
+      :type: tuple(int, int)
+      :description: The position of the :py:attr:`active_block`.
+
+   .. py:attribute:: blocks
+
+      :type: dict(str, Block)
+      :description: Contains all possible blocks for the board. Use
+		    :py:meth:`getAvailableBlocks` to show what blocks
+		    are available.
+
+   .. py:attribute:: board
+
+      :type: list(list(int))
+      :description: The board stored as a matrix of integers. All the
+                    non-zeroes in the matrix are considered as blocks.
+
+   .. rubric:: Methods
+	       
    .. py:method:: initialiseBlocks
 
-      An internal function which creates all the blocks for the Tetris board.
+      An internal function which creates all the blocks for the Tetris
+      board.
 
    .. py:method:: getAvailableBlocks
 
@@ -144,7 +215,8 @@ Tetrislib
 
       Adds a block shape onto the board at a given position.
 
-      :param tuple(int, int) position: The position which the shape are drawn onto.
+      :param tuple(int, int) position: The position which the shape
+                                       are drawn onto.
       :param Block block: The block which is going to be drawn.
       :return: A board including the new shape.
       :rtype: list(list(int))
