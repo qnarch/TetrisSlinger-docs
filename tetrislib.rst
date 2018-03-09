@@ -58,16 +58,24 @@ Actions
 
 .. py:class:: Block(rotation)
 
-   A class which describes a block an its rotation. Internally,
-   :py:attr:`rotations` contains a list of all
-   rotations. :py:attr:`rotation_index` 
-
-   :param int rotation_index: This contains the index which the
-			      methods in this class use to determine
-			      its rotation state.
-   :param rotations: A list of the all possible rotations of the
-                     blocks.
+   A class which describes a block an its rotation.
 		     
+   .. rubric:: Attributes
+
+   .. py:attribute:: rotations
+
+      :type: list(list(list(int)))
+      :description: Contains a list of matrices where each matrix
+                    represents a rotation of this block.
+
+   .. py:attribute:: rotation_index
+		     
+      :type: int
+      :description: Contains the index to :py:attr:`rotations` which
+                    e.g. :py:meth:`rotate` use to determine current
+                    state.
+
+   .. rubric:: Methods
    .. py:method:: rotate
 
       Rotate the block counterclockwise; that is, increment
