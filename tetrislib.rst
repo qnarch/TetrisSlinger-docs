@@ -32,6 +32,10 @@ Tetrislib
 .. py:class:: SetBlock(block)
 
    An :py:class:`Action` class which sets the active block on a board
+   to a :py:class:`Block`.
+
+   :param Block block: The block which the :py:class:`Board` should
+                       use as an active block.
 
 .. py:class:: Block(rotation)
 
