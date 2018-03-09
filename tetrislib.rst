@@ -103,18 +103,30 @@ Board
 
    This class contains the tetris board.
 
-   :param active_block: The current active block
-   :type active_block: Block
+   .. py:attribute:: active_block
 
-   :param active_block_position: The position of the active block.
-   :type active_block_position: tuple(int, int)
-		       
-   :param blocks: All the possible blocks for a board.
-   :type blocks: dict(str, Block)
-		 
-   :param board: The board, where the value of a block at (x,y) is
-                 defined as board[y][x].
-   :type board: int
+      :type: :py:class:`Block`
+      :description: The current active block. Use
+                    :py:meth:`setActiveBlock` to change
+                    it. Do **not** change this directly.
+
+   .. py:attribute:: active_block_position
+
+      :type: tuple(int, int)
+      :description: The position of the :py:attr:`active_block`.
+
+   .. py:attribute:: blocks
+
+      :type: dict(str, Block)
+      :description: Contains all possible blocks for the board. Use
+		    :py:meth:`getAvailableBlocks` to show what blocks
+		    are available.
+
+   .. py:attribute:: board
+
+      :type: list(list(int))
+      :description: The board stored as a matrix of integers. All the
+                    non-zeroes in the matrix are considered as blocks.
 
    .. py:method:: initialiseBlocks
 
