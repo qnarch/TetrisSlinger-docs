@@ -10,7 +10,7 @@ What is this library?
 **Tetrislib** is a python 3 library which one can use to play the
  classical game `Tetris`_. This library consists of a
  :py:class:`Board` and its :py:class:`Action`:s; the Action's purpose
- is to control the Board. The user are able to implement their own
+ is to manipulate the Board. The user are able to implement their own
  Action's using inheritance.
 
 The purpose of this document
@@ -43,8 +43,8 @@ Actions
    .. py:attribute:: action_completed
 		     
       :type: bool
-      :description: Indicates whether :py:meth:`applyAction` has
-                    runned or not.
+      :description: Indicates whether :py:meth:`applyAction` has run
+                    or not.
    
    .. py:method:: applyAction(board)
 
