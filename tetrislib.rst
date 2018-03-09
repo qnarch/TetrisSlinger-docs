@@ -103,12 +103,14 @@ Board
 
    This class contains the tetris board.
 
+   .. rubric:: Attributes
+   
    .. py:attribute:: active_block
 
       :type: :py:class:`Block`
       :description: The current active block. Use
-                    :py:meth:`setActiveBlock` to change
-                    it. Do **not** change this directly.
+		    :py:meth:`setActiveBlock` to change
+		    it. Do **not** change this directly.
 
    .. py:attribute:: active_block_position
 
@@ -128,6 +130,8 @@ Board
       :description: The board stored as a matrix of integers. All the
                     non-zeroes in the matrix are considered as blocks.
 
+   .. rubric:: Methods
+	       
    .. py:method:: initialiseBlocks
 
       An internal function which creates all the blocks for the Tetris
