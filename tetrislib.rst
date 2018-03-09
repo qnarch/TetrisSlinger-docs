@@ -26,7 +26,8 @@ Tetrislib
 
    .. py:method:: applyAction(board)
 
-      Applying the movement with the direction as defined at :py:attr:`direction`.
+      Applying the movement with the direction as defined at
+      :py:attr:`direction`.
 
 .. py:class:: SetBlock(block)
 
@@ -41,7 +42,8 @@ Tetrislib
    :param int rotation_index: This contains the index which the
 			      methods in this class use to determine
 			      its rotation state.
-   :param rotations: A list of the all possible rotations of the blocks.
+   :param rotations: A list of the all possible rotations of the
+                     blocks.
 		     
    .. py:method:: rotate
 
@@ -89,7 +91,8 @@ Tetrislib
 
    .. py:method:: initialiseBlocks
 
-      An internal function which creates all the blocks for the Tetris board.
+      An internal function which creates all the blocks for the Tetris
+      board.
 
    .. py:method:: getAvailableBlocks
 
@@ -144,7 +147,8 @@ Tetrislib
 
       Adds a block shape onto the board at a given position.
 
-      :param tuple(int, int) position: The position which the shape are drawn onto.
+      :param tuple(int, int) position: The position which the shape
+                                       are drawn onto.
       :param Block block: The block which is going to be drawn.
       :return: A board including the new shape.
       :rtype: list(list(int))
