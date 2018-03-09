@@ -19,7 +19,9 @@ Tetrislib
    Movement is a class which describes the direction of the active
    tetris block. This class is inherited from :py:class:`Action`.
 
-   :param str direction: The direction of an active tetris block.
+   :param str direction: The direction of an active tetris
+                         block. Valid values are ``left``, ``right``
+                         and ``down``.
    :param repeat: How many times one should do the movement.
 
    .. py:method:: applyAction(board)
