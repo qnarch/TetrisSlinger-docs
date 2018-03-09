@@ -4,11 +4,25 @@ Tetrislib
 Introduction
 ------------
 
+What is this library?
+^^^^^^^^^^^^^^^^^^^^^
+
 **Tetrislib** is a python 3 library which one can use to play the
  classical game `Tetris`_. This library consists of a
  :py:class:`Board` and its :py:class:`Action`:s; the Action's purpose
  is to control the Board. The user are able to implement their own
  Action's using inheritance.
+
+The purpose of this document
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+ The purpose of this document is to provide the user information on
+ how one can use this library for the user's implementation of
+ Tetris. Furthermore, the user will be introduced to how tetrislib
+ enables control of the board movement as well as how one can use the
+ matrix representation of the board. Also, an section will be provided
+ with a complete description of all classes and its methods including
+ their purpose.
 
  .. _Tetris: https://en.wikipedia.org/wiki/Tetris
 
