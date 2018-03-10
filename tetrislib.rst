@@ -53,10 +53,10 @@ Actions
 .. py:class:: Movement(direction, [repeat=1])
 
    Movement is a class which describes the direction of the active
-   tetris block. This class is inherited from :py:class:`Action`.
+   tetris shape. This class is inherited from :py:class:`Action`.
 
    :param str direction: The direction of an active tetris
-                         block. Valid values are ``left``, ``right``
+                         shape. Valid values are ``left``, ``right``
                          and ``down``.
    :param repeat: How many times one should do the movement.
 
@@ -65,17 +65,17 @@ Actions
       Applying the movement with the direction as defined at
       :py:attr:`direction`.
 
-.. py:class:: SetBlock(block)
+.. py:class:: SetShape(shape)
 
-   An :py:class:`Action` class which sets the active block on a board
-   to a :py:class:`Block`.
+   An :py:class:`Action` class which sets the active shape on a board
+   to a :py:class:`Shape`.
 
-   :param Block block: The block which the :py:class:`Board` should
-                       use as an active block.
+   :param Shape shape: The shape which the :py:class:`Board` should
+                       use as an active shape.
 
-.. py:class:: Block(rotation)
+.. py:class:: Shape(rotation)
 
-   A class which describes a block an its rotation.
+   A class which describes a shape an its rotation.
 		     
    .. rubric:: Attributes
 
@@ -83,7 +83,7 @@ Actions
 
       :type: list(list(list(int)))
       :description: Contains a list of matrices where each matrix
-                    represents a rotation of this block.
+                    represents a rotation of this shape.
 
    .. py:attribute:: rotation_index
 		     
@@ -95,14 +95,14 @@ Actions
    .. rubric:: Methods
    .. py:method:: rotate
 
-      Rotate the block counterclockwise; that is, increment
+      Rotate the shape counterclockwise; that is, increment
       :py:attr:`rotation_index` with 1.
 
    .. py:method:: getNextRotation
 
-      Get the next rotation of the block.
+      Get the next rotation of the shape.
 
-      :return: The next rotation of the block.
+      :return: The next rotation of the shape.
       :rtype: list(list(int)).
 
    .. py:method:: getNextSize
@@ -115,9 +115,9 @@ Actions
       :return: The size of the current rotation as (x, y).
       :rtype: tuple(int, int)
 
-   .. py:method:: getBlock
+   .. py:method:: getShape
 
-      :return: The block as a nested int array.
+      :return: The shape as a nested int array.
       :rtype: list(list(int))
 
 
@@ -130,23 +130,23 @@ Board
 
    .. rubric:: Attributes
    
-   .. py:attribute:: active_block
+   .. py:attribute:: active_shape
 
-      :type: :py:class:`Block`
-      :description: The current active block. Use
-		    :py:meth:`setActiveBlock` to change
+      :type: :py:class:`Shape`
+      :description: The current active shape. Use
+		    :py:meth:`setActiveShape` to change
 		    it. Do **not** change this directly.
 
-   .. py:attribute:: active_block_position
+   .. py:attribute:: active_shape_position
 
       :type: tuple(int, int)
-      :description: The position of the :py:attr:`active_block`.
+      :description: The position of the :py:attr:`active_shape`.
 
-   .. py:attribute:: blocks
+   .. py:attribute:: shape
 
-      :type: dict(str, Block)
-      :description: Contains all possible blocks for the board. Use
-		    :py:meth:`getAvailableBlocks` to show what blocks
+      :type: dict(str, Shape)
+      :description: Contains all possible shapes for the board. Use
+		    :py:meth:`getAvailableShapes` to show what shapes
 		    are available.
 
    .. py:attribute:: board
@@ -157,21 +157,21 @@ Board
 
    .. rubric:: Methods
 	       
-   .. py:method:: initialiseBlocks
+   .. py:method:: initialiseShapes
 
-      An internal function which creates all the blocks for the Tetris
+      An internal function which creates all the shapes for the Tetris
       board.
 
-   .. py:method:: getAvailableBlocks
+   .. py:method:: getAvailableShapes
 
-      :return: Returns all availble blocks.
+      :return: Returns all available shapes.
       :rtype: list(str)
 
    .. py:method:: getNewXYCoordinateWithDirection(direction)
 
       Takes a direction string and returns a new coordinate based on
-      the current active block position at
-      :py:attr:`active_block_position`.
+      the current active shape position at
+      :py:attr:`active_shape_position`.
 
       :param str direction: The direction
       :return: The new coordinate as (x, y).
@@ -184,40 +184,41 @@ Board
       :return: Number of non zeroes for each row.
       :rtype: list(int)
 
-   .. py:method:: setActiveBlockFromString(block_str)
+   .. py:method:: setActiveShapeFromString(shape)
 
-      Sets the active block given a string.
+      Sets the active shape given a string.
 
-      :param str block_str: The block shape as a string.
+      :param str shape: The shape as a string.
 
-   .. py:method:: setActiveBlock(block)
+   .. py:method:: setActiveShape(shape)
 
-      Sets the active block given a :py:class:`Block`.
+      Sets the active shape given a :py:class:`Shape`.
 
-      :param Block block: The block shape.
+      :param Shape shape: The shape which the Board should use as an
+                          active shape.
 
    .. py:method:: rotateActive
 
-      Rotates the active block at :py:attr:`active_block`, does
+      Rotates the active shape at :py:attr:`active_shape`, does
       internally a collision check using
       :py:meth:`collisionCheckWithShapeAndPos`.
 
    .. py:method:: traverse(direction)
 
-      Will traverse the active block using the direction and the
+      Will traverse the active shape using the direction and the
       method :py:meth:`getNewXYCoordinateWithDirection` if the
       collision check passes using :py:meth:`collisionCheck`.
 
-      :param str direction: The direction of the block. Valid values
+      :param str direction: The direction of the shape. Valid values
                             are: left, down and right.
 
-   .. py:method:: addShape(position, block)
+   .. py:method:: addShape(position, shape)
 
-      Adds a block shape onto the board at a given position.
+      Adds a shape onto the board at a given position.
 
       :param tuple(int, int) position: The position which the shape
                                        are drawn onto.
-      :param Block block: The block which is going to be drawn.
+      :param Shape shape: The shape which is going to be drawn.
       :return: A board including the new shape.
       :rtype: list(list(int))
 
@@ -236,21 +237,21 @@ Board
       :return: Returns True if there is a collision, otherwise False.
       :rtype: Bool
 
-   .. py:method:: collisionCheckWithShapeAndPos(position, block):
+   .. py:method:: collisionCheckWithShapeAndPos(position, shape):
 
-      Apply a given block onto the board with a given coordinate,
+      Apply a given shape onto the board with a given coordinate,
       then, check whether there is a collision or not.
 
-      :param position: The position of the block in (x, y)
+      :param position: The position of the shape in (x, y)
       :type position: tuple(int, int)
-      :param Block block: The block
+      :param Shape shape: The shape
       :return: ``True`` if there is a collision, ``False`` otherwise.
       :rtype: Bool
 
    
    .. py:method:: doHardDrop
 
-      Makes the active block go directly to the bottom of the board.
+      Makes the active shape go directly to the bottom of the board.
 
 
    .. py:method:: fillNullRowsFromTop(board, n)
@@ -264,7 +265,7 @@ Board
 
    .. py:method:: mergeActiveWithBoard
 
-      Merges the active block with the board.
+      Merges the active shape with the board.
 
       :return: The resulting board.
       :rtype: list(list(int))
@@ -285,7 +286,7 @@ Board
 
    .. py:method:: update
 
-      This method's purpose is to determine whether the active block
+      This method's purpose is to determine whether the active shape
       should merge to the static one. Runs for each tick.
 
       

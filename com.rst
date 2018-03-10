@@ -1,7 +1,7 @@
 Specification for Server to Client Communication
 ================================================
 
-*version 2018/03/04*
+*version 2018/03/10*
 
 NOTE: This document is subjected to change, modifications can and will happen
 until a final release is available.
@@ -20,7 +20,7 @@ Client to Server
 The client is sending to the server a UTF-8 string with the following
 format: ::
 
-   { 'version': '0.2', 'type': <string>, 'value': ...  }
+   { 'version': '0.3', 'type': <string>, 'value': ...  }
 
 
 Where `version` is the protocol version number, `type` the type of
@@ -31,8 +31,8 @@ The following commands should be available (not in a particular order): ::
 
    get_board
 
-   get_active_block
-   move_active_block
+   get_active_shape
+   move_active_shape
 
    get_queued_powerup
    use_queued_powerup
@@ -45,7 +45,7 @@ The following commands should be available (not in a particular order): ::
 
 The server will answer in this format: ::
 
-   { 'version': '0.2',
+   { 'version': '0.3',
      'response_type': <string>,
      'value': ...
    }
@@ -62,13 +62,13 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.2',
+   { 'version': '0.3',
      'response_type': 'board',
      'value': <int_array>
    }
 
 
-get_active_block
+get_active_shape
 """"""""""""""""
 Send: ::
 
@@ -77,22 +77,22 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.2',
-     'response_type': 'active_block',
+   { 'version': '0.3',
+     'response_type': 'active_shape',
      'value': <string>
    }
 
 where `<string>` can be one of these: ::
 
-   L-block
-   RevL-block
-   I-block
-   Z-block
-   RevZ-block
-   T-block
-   S-block
+   L-shape
+   RevL-shape
+   I-shape
+   Z-shape
+   RevZ-shape
+   T-shape
+   S-shape
 
-move_active_block
+move_active_shape
 """""""""""""""""
 Send: ::
 
@@ -103,7 +103,7 @@ where the string is either `left`, `right`, `down`, `rotate` or `hard_drop`.
 
 Response: ::
 
-   { 'version': '0.2',
+   { 'version': '0.3',
      'response_type': 'status',
      'value': <int>
    }
@@ -119,7 +119,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.2',
+   { 'version': '0.3',
      'response_type': 'queued_powerup',
      'value': <string>
    }
@@ -144,7 +144,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.2',
+   { 'version': '0.3',
      'response_type': 'board',
      'value': <int_array>
    }
@@ -158,7 +158,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.2',
+   { 'version': '0.3',
      'response_type': 'status',
      'value': <int>
    }
@@ -175,7 +175,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.2',
+   { 'version': '0.3',
      'response_type': 'status',
      'value': <int>
    }
@@ -192,7 +192,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.2',
+   { 'version': '0.3',
     'response_type': 'status',
     'value': <int>
    }
