@@ -70,12 +70,12 @@ Actions
    An :py:class:`Action` class which sets the active shape on a board
    to a :py:class:`Shape`.
 
-   :param Shape shape: The block which the :py:class:`Board` should
+   :param Shape shape: The shape which the :py:class:`Board` should
                        use as an active shape.
 
 .. py:class:: Shape(rotation)
 
-   A class which describes a block an its rotation.
+   A class which describes a shape an its rotation.
 		     
    .. rubric:: Attributes
 
@@ -95,7 +95,7 @@ Actions
    .. rubric:: Methods
    .. py:method:: rotate
 
-      Rotate the block counterclockwise; that is, increment
+      Rotate the shape counterclockwise; that is, increment
       :py:attr:`rotation_index` with 1.
 
    .. py:method:: getNextRotation
@@ -144,7 +144,7 @@ Board
 
    .. py:attribute:: shape
 
-      :type: dict(str, Block)
+      :type: dict(str, Shape)
       :description: Contains all possible shapes for the board. Use
 		    :py:meth:`getAvailableShapes` to show what shapes
 		    are available.
@@ -188,14 +188,14 @@ Board
 
       Sets the active shape given a string.
 
-      :param str shape: The block shape as a string.
+      :param str shape: The shape as a string.
 
    .. py:method:: setActiveShape(shape)
 
       Sets the active shape given a :py:class:`Shape`.
 
       :param Shape shape: The shape which the Board should use as an
-                          active block.
+                          active shape.
 
    .. py:method:: rotateActive
 
@@ -242,7 +242,7 @@ Board
       Apply a given shape onto the board with a given coordinate,
       then, check whether there is a collision or not.
 
-      :param position: The position of the block in (x, y)
+      :param position: The position of the shape in (x, y)
       :type position: tuple(int, int)
       :param Shape shape: The shape
       :return: ``True`` if there is a collision, ``False`` otherwise.
