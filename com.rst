@@ -45,7 +45,7 @@ The following commands should be available (not in a particular order): ::
 
 The server will answer in this format: ::
 
-   { 'version': '0.2',
+   { 'version': '0.3',
      'response_type': <string>,
      'value': ...
    }
@@ -62,7 +62,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.2',
+   { 'version': '0.3',
      'response_type': 'board',
      'value': <int_array>
    }
@@ -77,7 +77,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.2',
+   { 'version': '0.3',
      'response_type': 'active_shape',
      'value': <string>
    }
@@ -103,7 +103,7 @@ where the string is either `left`, `right`, `down`, `rotate` or `hard_drop`.
 
 Response: ::
 
-   { 'version': '0.2',
+   { 'version': '0.3',
      'response_type': 'status',
      'value': <int>
    }
@@ -119,7 +119,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.2',
+   { 'version': '0.3',
      'response_type': 'queued_powerup',
      'value': <string>
    }
@@ -144,7 +144,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.2',
+   { 'version': '0.3',
      'response_type': 'board',
      'value': <int_array>
    }
@@ -158,7 +158,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.2',
+   { 'version': '0.3',
      'response_type': 'status',
      'value': <int>
    }
@@ -175,7 +175,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.2',
+   { 'version': '0.3',
      'response_type': 'status',
      'value': <int>
    }
@@ -192,7 +192,7 @@ Send: ::
 
 Response: ::
 
-   { 'version': '0.2',
+   { 'version': '0.3',
     'response_type': 'status',
     'value': <int>
    }
