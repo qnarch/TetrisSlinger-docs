@@ -1,7 +1,7 @@
 Specification for Server to Client Communication
 ================================================
 
-*version 2018/03/10*
+*version 2018/03/18*
 
 NOTE: This document is subjected to change, modifications can and will happen
 until a final release is available.
@@ -127,13 +127,14 @@ Response: ::
 where `<string>` can be one of these: ::
 
    AddRow
+   ClearBoard
    Earthquake
+   Gravity
    Milkshake
    RemovePow
    Shotgun
-   Gravity
-   ClearBoard
    SwitchBoard
+   Nothing
    
 use_queued_powerup
 """"""""""""""""""
